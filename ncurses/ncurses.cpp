@@ -4,9 +4,20 @@
 #include <curses.h>
 
 
+void gotoxy(int x, int y)
+{
+	printf("%c[%d;%df", 0x1B, y, x);
+}
+
+int main(void)
+{
+	gotoxy(4, 4);
+	printf("Test");
+}
 
 
-int main(void) {
+
+int main2(void) {
 
 	WINDOW * mainwin, *childwin;
 	int      ch;
